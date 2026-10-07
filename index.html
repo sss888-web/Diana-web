@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diana Sedal — веб-разработчик</title>
+  <meta name="description"
+    content="Диана Седал делает сайты под ключ: дизайн, вёрстка, JavaScript, Node.js и базы данных. Работаю удалённо.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Manrope:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-title="meta.homeTitle">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">D</span>
+        <span class="logo-text"><strong>DIANA SEDAL</strong><small>WEB DEVELOPER</small></span>
+      </a>
+      <nav class="nav" data-nav>
+        <a href="index.html" aria-current="page" data-i18n="nav.home">Главная</a>
+        <a href="#about" data-i18n="nav.about">Обо мне</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="contact.html" data-i18n="nav.contact">Контакты</a>
+        <a class="nav-cta" href="https://wa.me/79996574026" data-i18n="nav.write">Написать</a>
+      </nav>
+      <div class="header-tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang-set="ru" aria-pressed="true">RU</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang-set="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="menu-btn" type="button" data-menu aria-expanded="false" data-i18n-attr="aria-label"
+          data-i18n-key="nav.menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="socials">
+          <a href="https://www.facebook.com/profile.php?id=61558114705324" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z" />
+            </svg>
+          </a>
+          <a href="https://t.me/+79996574026" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M21 4 3.5 11.2c-1.2.5-1.2 1.2-.2 1.5l4.5 1.4 1.7 5.2c.2.6.1.8.7.8.3 0 .5-.1.7-.4l2.5-2.4 4.8 3.5c.9.5 1.5.2 1.7-.8L22.7 5c.3-1.2-.5-1.7-1.7-1zM9.4 14.7l8.7-5.5c.4-.3.8 0 .5.4l-7.4 6.7-.3 3.2-1.5-4.8z" />
+            </svg>
+          </a>
+          <a href="https://wa.me/79996574026" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3zm5.2 12.7c-.2.6-1.2 1.1-1.7 1.2-.4.1-.9.2-2.9-.6-2.4-1-4-3.4-4.1-3.6-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 2 .8 2.1.1.2.1.3 0 .5-.1.2-.2.3-.3.5l-.3.3c-.1.1-.2.2-.1.4.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.5-.1.2.1 1.4.7 1.6.8.2.1.4.2.4.3.1.3 0 .8-.2 1.1z" />
+            </svg>
+          </a>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Личный сайт</p>
+          <h1 data-i18n="hero.title" data-i18n-html>Я веб-разработчик<br><span>Диана Седал</span></h1>
+          <p class="lead" data-i18n="hero.lead">Превращаю ваши идеи в работающие сайты. JavaScript · Node.js · Базы
+            данных. Напишите мне — обсудим ваш проект.</p>
+        </div>
+        <figure class="portrait">
+          <img src="images/portrait.png" alt="Диана Седал, веб-разработчик">
+        </figure>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/79996574026" data-i18n="hero.cta">Связаться</a>
+          <a class="btn btn-ghost" href="portfolio.html" data-i18n="hero.works">Смотреть работы</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap split">
+        <figure class="about-photo">
+          <img src="images/about.jpg" alt="Диана Седал на закате у моря">
+        </figure>
+        <div>
+          <p class="eyebrow">About me</p>
+          <h2 data-i18n="home.aboutTitle">Разрабатываю с душой, пока исследую мир</h2>
+          <hr class="rule">
+          <p data-i18n="home.about1">Меня зовут Диана. Я создаю сайты от дизайна до готовой страницы: HTML, CSS,
+            JavaScript, Node.js, формы заявок и база данных.</p>
+          <p data-i18n="home.about2">В портфолио — сайт логистики из Китая, школа английского LinguaPro, каталог техники
+            и лендинг курса. Вы получаете собранный сайт, который работает на заявки.</p>
+          <p data-i18n="home.about3">Работаю удалённо, часовой пояс UTC+7. Отвечаю в течение 24 часов и с удовольствием
+            поработаю с вами.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blush">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow" data-i18n="home.servicesEyebrow">Услуги</p>
+          <h2 data-i18n="home.servicesTitle">Какие услуги я предоставляю</h2>
+          <hr class="rule">
+          <p class="lead" data-i18n="home.servicesLead">Собираю сайты под ключ — красиво, быстро и с заботой о каждой
+            детали.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-head">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+              </svg>
+              <h3 data-i18n="home.cardUiTitle">UI/UX Design</h3>
+            </div>
+            <p data-i18n="home.cardUi">Подбираю цвета, шрифты и сетку страниц — так, чтобы сайт был понятным вам и вашим
+              клиентам.</p>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+              <h3 data-i18n="home.cardWp">Сайт под ключ</h3>
+            </div>
+            <p data-i18n="home.cardWpText">Собираю сайт целиком: страницы, адаптив, форма заявок. Нужна админка — сделаю
+              вход и список заявок, без тяжёлых конструкторов.</p>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M8 8 4 12l4 4M16 8l4 4-4 4M13 6l-2 12" />
+              </svg>
+              <h3 data-i18n="home.cardDevTitle">Web Development</h3>
+            </div>
+            <p data-i18n="home.cardDev">JavaScript и Node.js: сервер, база, письма и Telegram. Форма работает, заявки не
+              теряются.</p>
+          </article>
+          <article class="card">
+            <div class="card-head">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 20v-6" />
+                <path d="M8 14h8" />
+                <path d="M6 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4" />
+                <rect x="4" y="10" width="16" height="10" rx="2" />
+              </svg>
+              <h3 data-i18n="home.cardSupport">Поддержка и доработки</h3>
+            </div>
+            <p data-i18n="home.cardSupportText">После запуска правлю тексты, добавляю блоки и слежу, чтобы форма и почта
+              работали.</p>
+          </article>
+        </div>
+        <p class="center" style="margin-top: 28px;">
+          <a class="btn btn-primary" href="contact.html" data-i18n="home.servicesCta">Оставить заявку</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">My portfolio</p>
+          <h2 data-i18n="home.recent">Проекты</h2>
+          <hr class="rule">
+        </div>
+        <div class="shots">
+          <button class="shot" type="button" data-shot><img src="images/work-sedalishev.png"
+              alt="Сайт Sedalishev — логистика из Китая"></button>
+          <button class="shot" type="button" data-shot><img src="images/work-lingua.png"
+              alt="Сайт школы английского LinguaPro"></button>
+          <button class="shot" type="button" data-shot><img src="images/work-course.png"
+              alt="Лендинг про онлайн-шоппинг в Китае"></button>
+        </div>
+        <p class="center" style="margin-top: 28px;"><a class="btn btn-ghost" href="portfolio.html"
+            data-i18n="home.allProjects">Проекты</a></p>
+      </div>
+    </section>
+
+    <section class="section blush">
+      <div class="wrap contact-grid">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2 data-i18n="home.faqTitle">Вопросы и ответы</h2>
+          <hr class="rule">
+          <div class="faq">
+            <details open>
+              <summary data-i18n="home.faq1q">Какие услуги вы предлагаете?</summary>
+              <p data-i18n="home.faq1a">Создаю сайты под ключ, разрабатываю на JavaScript и Node.js, подключаю базы
+                данных и настраиваю формы для сбора заявок. Также делаю UI/UX дизайн — красиво и функционально.</p>
+            </details>
+            <details>
+              <summary data-i18n="home.faq2q">Как вы подходите к новому проекту?</summary>
+              <p data-i18n="home.faq2a">Сначала выслушиваю вас и разбираюсь в задаче. Затем предлагаю решение,
+                согласовываем детали — и берусь за работу. Держу в курсе на каждом этапе.</p>
+            </details>
+            <details>
+              <summary data-i18n="home.faq3q">Сколько времени займёт проект?</summary>
+              <p data-i18n="home.faq3a">Простой лендинг — 3–5 дней. Сайт под ключ — 1–2 недели. Сроки обсуждаем
+                индивидуально под вашу задачу.</p>
+            </details>
+            <details>
+              <summary data-i18n="home.faq4q">Сколько стоят ваши услуги?</summary>
+              <p data-i18n="home.faq4a">Цена зависит от объёма и сложности проекта. Напишите мне — обсудим и найдём
+                вариант под ваш бюджет.</p>
+            </details>
+            <details>
+              <summary data-i18n="home.faq5q">С чем вы работаете?</summary>
+              <p data-i18n="home.faq5a">Делаю сайты на чистом коде: HTML, CSS и JavaScript. На сервере — Node.js и база
+                для заявок. Хостинг подбираем вместе под задачу и бюджет.</p>
+            </details>
+            <details>
+              <summary data-i18n="home.faq6q">Вы работаете с клиентами из других стран?</summary>
+              <p data-i18n="home.faq6a">Да, работаю удалённо с клиентами из любой точки мира. Часовой пояс UTC+7,
+                отвечаю в течение 24 часов.</p>
+            </details>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow" data-i18n="home.formEyebrow">Контакты</p>
+          <h2 data-i18n="home.formTitle">Оставьте свои данные</h2>
+          <hr class="rule">
+          <p data-i18n="home.formLead">Расскажите подробнее о вашем проекте — я свяжусь с вами в течение 24 часов.</p>
+          <form data-form>
+            <label><span data-i18n="form.name">Имя</span>
+              <input name="name" type="text" required autocomplete="name">
+            </label>
+            <label><span data-i18n="form.email">Email</span>
+              <input name="email" type="email" required autocomplete="email">
+            </label>
+            <label><span data-i18n="form.kind">Какой сайт нужен?</span>
+              <select name="kind" required>
+                <option value="" data-i18n="form.kindEmpty">Выберите сферу</option>
+                <option value="Психолог (личный сайт)" data-i18n="form.kind1">Психолог (личный сайт)</option>
+                <option value="Коуч / бизнес-тренер" data-i18n="form.kind2">Коуч / бизнес-тренер</option>
+                <option value="Малый бизнес (услуги/товары)" data-i18n="form.kind3">Малый бизнес (услуги/товары)
+                </option>
+                <option value="Фотограф (портфолио)" data-i18n="form.kind4">Фотограф (портфолио)</option>
+                <option value="Онлайн-школа / курсы" data-i18n="form.kind5">Онлайн-школа / курсы</option>
+                <option value="Другое" data-i18n="form.kind6">Другое</option>
+              </select>
+            </label>
+            <label><span data-i18n="form.message">Дополнительные пожелания</span>
+              <textarea name="message"></textarea>
+            </label>
+            <label class="consent">
+              <input name="consent" type="checkbox" required>
+              <span data-i18n="form.consent" data-i18n-html>Соглашаюсь на обработку персональных данных и принимаю <a
+                  href="privacy.html">политику конфиденциальности</a>.</span>
+            </label>
+            <button class="btn btn-primary" type="submit" data-i18n="form.submit">Отправить</button>
+            <p class="hp"><label>Не заполняйте это поле<input name="_honey" type="text" tabindex="-1"
+                  autocomplete="off"></label></p>
+            <p class="form-note" data-form-note hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Diana Sedal</strong>
+        <p data-i18n="footer.home">Сайты, которые работают на ваш бизнес.</p>
+      </div>
+      <div>
+        <p><a href="privacy.html" data-i18n="footer.privacy">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" data-lightbox>
+    <button type="button" data-lightbox-close data-i18n-attr="aria-label" data-i18n-key="close">×</button>
+    <img data-lightbox-img alt="">
+  </div>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

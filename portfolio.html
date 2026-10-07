@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Портфолио — Diana Sedal</title>
+  <meta name="description" content="Работы Дианы Седал: лендинги, каталоги и сайты для бизнеса.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title="meta.portfolioTitle">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">D</span>
+        <span class="logo-text"><strong>DIANA SEDAL</strong><small>WEB DEVELOPER</small></span>
+      </a>
+      <nav class="nav" data-nav>
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="index.html#about" data-i18n="nav.about">Обо мне</a>
+        <a href="portfolio.html" aria-current="page" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="contact.html" data-i18n="nav.contact">Контакты</a>
+        <a class="nav-cta" href="https://wa.me/79996574026" data-i18n="nav.write">Написать</a>
+      </nav>
+      <div class="header-tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang-set="ru" aria-pressed="true">RU</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang-set="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="menu-btn" type="button" data-menu aria-expanded="false" data-i18n-attr="aria-label" data-i18n-key="nav.menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Portfolio</p>
+        <h1 data-i18n="port.title">Что вы получите, работая со мной</h1>
+        <hr class="rule">
+        <p class="lead" data-i18n="port.lead">Делаю сайты под ключ — красиво, в срок и с заботой о каждой детали.</p>
+      </div>
+
+      <article class="project">
+        <div>
+          <p class="eyebrow" data-i18n="port.logistics">Логистика</p>
+          <h2>Sedalishev</h2>
+          <p data-i18n="port.sedal">Сайт про закупку и доставку товаров из Китая: первый экран, команда и блок услуг.</p>
+          <div class="tags"><span data-i18n="port.landing">Лендинг</span><span>UI</span></div>
+        </div>
+        <div class="gallery">
+          <button type="button" data-shot><img src="images/work-sedalishev.png" alt="Главный экран Sedalishev"></button>
+          <button type="button" data-shot><img src="images/work-team.png" alt="Блок о команде в Китае"></button>
+          <button type="button" data-shot><img src="images/work-services.png" alt="Услуги сервиса в Китае"></button>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="eyebrow" data-i18n="port.catalog">Каталог</p>
+          <h2 data-i18n="port.machines">Техника</h2>
+          <p data-i18n="port.machinesText">Каталог мотоциклов и квадроциклов с карточками товаров и окном заявки.</p>
+          <div class="tags"><span data-i18n="port.catalog">Каталог</span><span data-i18n="port.product">Карточка товара</span></div>
+        </div>
+        <div class="gallery">
+          <button type="button" data-shot><img src="images/work-catalog.png" alt="Каталог техники"></button>
+          <button type="button" data-shot><img src="images/work-atv.png" alt="Карточки квадроциклов"></button>
+          <button type="button" data-shot><img src="images/work-product.png" alt="Окно с характеристиками квадроцикла"></button>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="eyebrow" data-i18n="port.edu">Образование</p>
+          <h2>LinguaPro</h2>
+          <p data-i18n="port.lingua">Сайт школы английского: программа, тарифы и форма записи на пробный урок.</p>
+          <div class="tags"><span data-i18n="port.landing">Лендинг</span><span data-i18n="port.formTag">Форма</span></div>
+        </div>
+        <div class="gallery">
+          <button type="button" data-shot><img src="images/work-lingua.png" alt="Главный экран LinguaPro"></button>
+          <button type="button" data-shot><img src="images/work-lingua-prices.png" alt="Тарифы LinguaPro"></button>
+          <button type="button" data-shot><img src="images/work-lingua-form.png" alt="Форма записи на урок"></button>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <p class="eyebrow" data-i18n="port.course">Курс</p>
+          <h2 data-i18n="port.china">Бизнес с Китаем</h2>
+          <p data-i18n="port.chinaText">Страница курса и клуба: для кого обучение, стоимость и форма заявки.</p>
+          <div class="tags"><span data-i18n="port.landing">Лендинг</span><span data-i18n="port.prices">Тарифы</span></div>
+        </div>
+        <div class="gallery">
+          <button type="button" data-shot><img src="images/work-course.png" alt="Главный экран курса про шоппинг в Китае"></button>
+          <button type="button" data-shot><img src="images/work-a.png" alt="Блок для кого подходит клуб"></button>
+          <button type="button" data-shot><img src="images/work-b.png" alt="Стоимость участия"></button>
+          <button type="button" data-shot><img src="images/work-c.png" alt="Тариф клуба"></button>
+          <button type="button" data-shot><img src="images/work-e.png" alt="Форма записи на урок"></button>
+        </div>
+      </article>
+
+      <p style="margin-top: 36px; text-align: center;"><a class="btn btn-primary" href="contact.html" data-i18n="port.cta">Свяжитесь со мной</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Diana Sedal</strong>
+        <p data-i18n="footer.portfolio">Facebook, WhatsApp и Telegram — в шапке сайта.</p>
+      </div>
+      <div>
+        <p><a href="privacy.html" data-i18n="footer.privacy">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" data-lightbox>
+    <button type="button" data-lightbox-close data-i18n-attr="aria-label" data-i18n-key="close">×</button>
+    <img data-lightbox-img alt="">
+  </div>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

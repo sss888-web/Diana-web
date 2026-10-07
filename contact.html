@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — Diana Sedal</title>
+  <meta name="description" content="Написать Диане Седал: почта, телефон, WhatsApp и Telegram.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title="meta.contactTitle">
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">D</span>
+        <span class="logo-text"><strong>DIANA SEDAL</strong><small>WEB DEVELOPER</small></span>
+      </a>
+      <nav class="nav" data-nav>
+        <a href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="index.html#about" data-i18n="nav.about">Обо мне</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio">Портфолио</a>
+        <a href="contact.html" aria-current="page" data-i18n="nav.contact">Контакты</a>
+        <a class="nav-cta" href="https://wa.me/79996574026" data-i18n="nav.write">Написать</a>
+      </nav>
+      <div class="header-tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang-set="ru" aria-pressed="true">RU</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang-set="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="menu-btn" type="button" data-menu aria-expanded="false" data-i18n-attr="aria-label" data-i18n-key="nav.menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section blush">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1 data-i18n="contact.title">Напишите мне</h1>
+        <hr class="rule">
+        <p data-i18n="contact.lead">Пишите в любое время. Отвечаю в течение 24 часов, работаю удалённо.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:dianavslvna@gmail.com">dianavslvna@gmail.com</a></li>
+          <li><a href="https://wa.me/79996574026">WhatsApp</a></li>
+          <li><a href="https://t.me/+79996574026">Telegram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61558114705324">Facebook</a></li>
+        </ul>
+      </div>
+      <form data-form>
+        <h2 data-i18n="contact.formTitle">Расскажите о проекте</h2>
+        <label><span data-i18n="form.name">Имя</span>
+          <input name="name" type="text" required autocomplete="name">
+        </label>
+        <label><span data-i18n="form.email">Email</span>
+          <input name="email" type="email" required autocomplete="email">
+        </label>
+        <label><span data-i18n="form.kind">Какой сайт нужен?</span>
+          <select name="kind" required>
+            <option value="" data-i18n="form.kindEmpty">Выберите сферу</option>
+            <option value="Психолог (личный сайт)" data-i18n="form.kind1">Психолог (личный сайт)</option>
+            <option value="Коуч / бизнес-тренер" data-i18n="form.kind2">Коуч / бизнес-тренер</option>
+            <option value="Малый бизнес (услуги/товары)" data-i18n="form.kind3">Малый бизнес (услуги/товары)</option>
+            <option value="Фотограф (портфолио)" data-i18n="form.kind4">Фотограф (портфолио)</option>
+            <option value="Онлайн-школа / курсы" data-i18n="form.kind5">Онлайн-школа / курсы</option>
+            <option value="Другое" data-i18n="form.kind6">Другое</option>
+          </select>
+        </label>
+        <label><span data-i18n="form.message">Дополнительные пожелания</span>
+          <textarea name="message"></textarea>
+        </label>
+        <label class="consent">
+          <input name="consent" type="checkbox" required>
+          <span data-i18n="form.consent" data-i18n-html>Соглашаюсь на обработку персональных данных и принимаю <a href="privacy.html">политику конфиденциальности</a>.</span>
+        </label>
+        <button class="btn btn-primary" type="submit" data-i18n="form.submit">Отправить</button>
+        <p class="hp"><label>Не заполняйте это поле<input name="_honey" type="text" tabindex="-1" autocomplete="off"></label></p>
+        <p class="form-note" data-form-note hidden></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Diana Sedal</strong>
+        <p data-i18n="footer.contact">Свяжусь в течение 24 часов.</p>
+      </div>
+      <div>
+        <p><a href="privacy.html" data-i18n="footer.privacy">Политика конфиденциальности</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
