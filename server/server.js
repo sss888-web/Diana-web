@@ -128,7 +128,7 @@ app.post("/api/leads", async (req, res) => {
   ].join("\n");
 
   notifyLead(text, email, name);
-}
+});
 
 app.post("/admin/login", (req, res) => {
   if (req.body.password === process.env.ADMIN_PASSWORD) {
