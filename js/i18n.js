@@ -120,7 +120,7 @@ const translations = {
     "privacy.h4": "Сколько храню и как удалить",
     "privacy.p4": "Заявки храню, пока веду переписку по проекту, затем удаляю. Напишите на dianavslvna@gmail.com — удалю ваши данные из базы.",
     "privacy.h5": "Cookies и метрика",
-    "privacy.p5": "Счётчиков аналитики на сайте сейчас нет. Язык интерфейса сохраняется в localStorage вашего браузера. Если позже подключу Метрику, обновлю эту страницу.",
+    "privacy.p5": "На сайте работает Яндекс Метрика: она собирает обезличенные данные о посещениях (страницы, время на сайте, тип устройства, примерный регион), использует cookies и записывает действия на странице через Вебвизор. Это нужно, чтобы понимать, как сделать сайт удобнее. Данные обрабатывает ООО «Яндекс» по своей политике: yandex.ru/legal/confidential. Отключить сбор можно в настройках браузера или блокировщиком. Язык интерфейса сохраняется в localStorage вашего браузера.",
     "close": "Закрыть",
   },
   en: {
@@ -244,7 +244,7 @@ const translations = {
     "privacy.h4": "How long I keep it",
     "privacy.p4": "I keep requests while we talk about the project, then delete them. Email dianavslvna@gmail.com and I will remove your data from the database.",
     "privacy.h5": "Cookies and analytics",
-    "privacy.p5": "There is no analytics counter on the site yet. The interface language is stored in your browser’s localStorage. If I add Yandex Metrica later, I will update this page.",
+    "privacy.p5": "This site uses Yandex Metrica. It collects anonymised visit data (pages, time on site, device type, approximate region), uses cookies and records on-page actions via Session Replay. This helps me make the site easier to use. The data is processed by Yandex LLC under its own policy: yandex.ru/legal/confidential. You can disable collection in your browser settings or with a blocker. The interface language is stored in your browser’s localStorage.",
     "close": "Close",
   },
 };
