@@ -62,10 +62,15 @@ app.post("/api/leads", async (req, res) => {
     return res.status(400).json({ ok: false });
   }
 
-  await db.query(
-    "INSERT INTO leads (name, email, kind, message) VALUES ($1, $2, $3, $4)",
-    [name, email, kind, message || ""],
-  );
+  try {
+    await db.query(
+      "INSERT INTO leads (name, email, kind, message) VALUES ($1, $2, $3, $4)",
+      [name, email, kind, message || ""],
+    );
+  } catch (error) {
+    console.error("Не удалось сохранить заявку:", error.message);
+    return res.status(500).json({ ok: false });
+  }
 
   const text = [
     "Новая заявка с сайта",
@@ -78,21 +83,30 @@ app.post("/api/leads", async (req, res) => {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
   if (token && chatId) {
-    await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: chatId, text }),
-    });
+    try {
+      await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text }),
+        signal: AbortSignal.timeout(8000),
+      });
+    } catch (error) {
+      console.error("Telegram не отправился:", error.message);
+    }
   }
 
   if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
-    await mailer.sendMail({
-      from: "Diana Sedal <" + process.env.GMAIL_USER + ">",
-      to: process.env.GMAIL_USER,
-      replyTo: email,
-      subject: "Заявка с сайта — " + name,
-      text,
-    });
+    try {
+      await mailer.sendMail({
+        from: "Diana Sedal <" + process.env.GMAIL_USER + ">",
+        to: process.env.GMAIL_USER,
+        replyTo: email,
+        subject: "Заявка с сайта — " + name,
+        text,
+      });
+    } catch (error) {
+      console.error("Письмо не отправилось:", error.message);
+    }
   }
 
   res.json({ ok: true });
