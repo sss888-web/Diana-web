@@ -35,7 +35,52 @@ const mailer = nodemailer.createTransport({
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_APP_PASSWORD,
   },
+  connectionTimeout: 8000,
+  greetingTimeout: 8000,
+  socketTimeout: 8000,
 });
+
+async function notifyLead(text, email, name) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (token && chatId) {
+    try {
+      const telegram = await fetch(
+        "https://api.telegram.org/bot" + token + "/sendMessage",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: chatId, text }),
+          signal: AbortSignal.timeout(8000),
+        },
+      );
+      if (!telegram.ok) {
+        const body = await telegram.json().catch(() => ({}));
+        console.error("Telegram не отправился:", body.description || telegram.status);
+      }
+    } catch (error) {
+      console.error("Telegram не отправился:", error.message);
+    }
+  } else {
+    console.log("Telegram выключен: нет TELEGRAM_BOT_TOKEN или TELEGRAM_CHAT_ID");
+  }
+
+  if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
+    try {
+      await mailer.sendMail({
+        from: "Diana Sedal <" + process.env.GMAIL_USER + ">",
+        to: process.env.GMAIL_USER,
+        replyTo: email,
+        subject: "Заявка с сайта — " + name,
+        text,
+      });
+    } catch (error) {
+      console.error("Письмо не отправилось:", error.message);
+    }
+  } else {
+    console.log("Gmail выключен: нет GMAIL_USER или GMAIL_APP_PASSWORD");
+  }
+}
 
 async function initDb() {
   await db.query(`
@@ -72,6 +117,8 @@ app.post("/api/leads", async (req, res) => {
     return res.status(500).json({ ok: false });
   }
 
+  res.json({ ok: true });
+
   const text = [
     "Новая заявка с сайта",
     "Имя: " + name,
@@ -80,37 +127,8 @@ app.post("/api/leads", async (req, res) => {
     "Пожелания: " + (message || "нет"),
   ].join("\n");
 
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (token && chatId) {
-    try {
-      await fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: chatId, text }),
-        signal: AbortSignal.timeout(8000),
-      });
-    } catch (error) {
-      console.error("Telegram не отправился:", error.message);
-    }
-  }
-
-  if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
-    try {
-      await mailer.sendMail({
-        from: "Diana Sedal <" + process.env.GMAIL_USER + ">",
-        to: process.env.GMAIL_USER,
-        replyTo: email,
-        subject: "Заявка с сайта — " + name,
-        text,
-      });
-    } catch (error) {
-      console.error("Письмо не отправилось:", error.message);
-    }
-  }
-
-  res.json({ ok: true });
-});
+  notifyLead(text, email, name);
+}
 
 app.post("/admin/login", (req, res) => {
   if (req.body.password === process.env.ADMIN_PASSWORD) {
@@ -205,6 +223,18 @@ initDb()
   .then(() => {
     app.listen(port, () => {
       console.log("Откройте http://localhost:" + port);
+      console.log(
+        "Telegram:",
+        process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID
+          ? "включён"
+          : "выключен",
+      );
+      console.log(
+        "Gmail:",
+        process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD
+          ? "включён"
+          : "выключен",
+      );
     });
   })
   .catch((error) => {
