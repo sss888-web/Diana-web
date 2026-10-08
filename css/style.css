@@ -166,6 +166,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 560; letter-spacing: -0.0
 .project { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 28px; padding: 28px 0; border-top: 1px solid var(--line); }
 .project h2 { font-size: 36px; margin-bottom: 8px; }
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.project-link { color: var(--pink); font-weight: 700; text-decoration: none; }
+.project-link:hover { color: var(--pink-deep); text-decoration: underline; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .tags span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-size: 13px; color: var(--muted); }
 
